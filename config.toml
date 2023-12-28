@@ -1,0 +1,4 @@
+baseURL = 'https://irisyao.me/'
+languageCode = 'en-us'
+title = 'IrisYao'
+theme = "hugo-theme-stack"
