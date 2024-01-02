@@ -1,34 +1,29 @@
 baseURL = "https://irisyao.me"
-title = "Puppet"
+title = "IrisYao"
 
 theme = "hugo-theme-puppet"
 themesDir = "./themes/"
 
 copyright = ""
 paginate = 3
-languageCode = "en"
-defaultContentLanguage = "en"
+languageCode = "zh"
+defaultContentLanguage = "zh"
 
 hasCJKLanguage = true
 enableInlineShortcodes = true
 enableEmoji = true
-# prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
-# See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
-ignoreErrors = ["error-remote-getjson"]
 
-disqusShortname = ""
 googleAnalytics = ""
 
 [outputs]
 home = ["HTML", "JSON", "RSS"]
 
-# prevent build failures when using Hugo's template _internal/opengraph.html 
 [taxonomies]
 category = "categories"
 tag = "tags"
-series = "series"
 
 [markup]
+# https://gohugo.io/functions/transform/highlight/
 [markup.highlight]
 noClasses = true
 codeFences = true
@@ -51,27 +46,27 @@ identifier = "archive"
 name = "Archive"
 url = "/archive/"
 weight = 10
-[[menu.main]]
-identifier = "guide"
-name = "Guide"
-url = "/series/themes-guide/"
-weight = 20
+# [[menu.main]]
+# identifier = "guide"
+# name = "Guide"
+# url = "/series/themes-guide/"
+# weight = 20
 [[menu.main]]
 identifier = "about"
 name = "About"
 url = "/about/"
 weight = 50
 [[menu.main]]
-identifier = "github"
-name = "Github"
-url = "https://github.com/roninro/hugo-theme-puppet/"
+identifier = "friends"
+name = "Friends"
+url = ""
 weight = 100
 
 
 [params]
-author = "Puppet"
-description = "A simple and clean theme for Hugo"
-keywords = "blog,developer,personal"
+author = "Iris"
+description = "有一些问题不会有答案 有一些事情总会有遗憾 也许未来会使我更完整 去拥抱吧 去勇敢吧"
+keywords = "blog,developer,frontend,backend,engineer,shanghai"
 img_home = "img/home-bg.jpg"
 img_404 = "img/404-bg.jpg"
 
@@ -85,39 +80,39 @@ enable = true
 gravatarEmail = ""
 # Overwritten by your gravatar image if `gravatarEmail` is filled
 avatar = "img/home-bg.jpg"
-bio = "a personal website"
+bio = "Iris"
 
 [params.social]
-twitter = "johndoe"
-facebook = "johndoe"
-zhihu = "johndoe"
-weibo = "johndoe"
-github = "johndoe"
-gitlab = "johndoe"
-linkedin = "johndoe"
-rss = true
-[params.social.mastodon]
-weight = 56
-icon = "fab fa-mastodon"
-format = "https://mastodon.social/%v"
-id = "johndoe"
-url = ""
+# twitter = "johndoe"
+# facebook = "johndoe"
+# zhihu = "johndoe"
+# weibo = "johndoe"
+# github = "iris"
+# gitlab = "johndoe"
+# linkedin = "johndoe"
+# rss = true
+# [params.social.mastodon]
+# weight = 56
+# icon = "fab fa-mastodon"
+# format = "https://mastodon.social/%v"
+# id = "mock"
+# url = ""
 
-[[params.friends]]
-name = "John Doe"
-url = "https://gohugo.io"
+# [[params.friends]]
+# name = "Windmgc"
+# url = "https://gohugo.io"
 
-[[params.friends]]
-name = "John Doe"
-url = "https://gohugo.io"
+# [[params.friends]]
+# name = "Windmgc"
+# url = "https://gohugo.io"
 
 # See https://giscus.app/
-[params.giscus]
-enable = true
-repo = "roninro/hugo-theme-puppet"
-repo_id = "R_kgDOHuvyhw"
-category = "General"
-category_id = "DIC_kwDOHuvyh84CQjDo"
-input_position = "top"
-theme = "light_tritanopia"
-lang = "en"
+# [params.giscus]
+# enable = true
+# repo = "roninro/hugo-theme-puppet"
+# repo_id = "R_kgDOHuvyhw"
+# category = "General"
+# category_id = "DIC_kwDOHuvyh84CQjDo"
+# input_position = "top"
+# theme = "light_tritanopia"
+# lang = "en"
