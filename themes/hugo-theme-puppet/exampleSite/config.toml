@@ -1,8 +1,8 @@
-baseURL = "https://irisyao.me"
+baseURL = "http://localhost:1313/subdir"
 title = "Puppet"
 
-theme = "hugo-theme-puppet"
-themesDir = "./themes/"
+theme = "puppet"
+themesDir = "../.."
 
 copyright = ""
 paginate = 3
