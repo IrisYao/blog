@@ -1,5 +1,5 @@
 baseURL = "https://irisyao.me"
-title = "IrisYao"
+title = "年年"
 
 theme = "hugo-theme-puppet"
 themesDir = "./themes/"
@@ -35,52 +35,55 @@ style = "dracula"
 [markup.goldmark.renderer]
 unsafe = true
 
+[params]
+author = "IrisYao"
+description = "有一些问题不会有答案 有一些事情总会有遗憾 也许未来会使我更完整"
+keywords = "blog,developer,frontend,backend,engineer,shanghai"
+img_home = "img/home-bg.jpg"
+img_404 = "img/404-bg.jpg"
+
+[params.brand]
+avatar = "img/avatar.jpg"
+
+# [params.sidebar]
+[params.sidebar]
+gravatarEmail = ""
+# Overwritten by your gravatar image if `gravatarEmail` is filled
+avatar = "img/home-bg.jpg"
+bio = "Iris"
+
 [menu]
 [[menu.main]]
-identifier = "home"
-name = "Home"
+identifier = "blog"
+name = "博客"
 url = "/"
 weight = -100
-[[menu.main]]
-identifier = "archive"
-name = "Archive"
-url = "/archive/"
-weight = 10
+# [[menu.main]]
+# identifier = "archive"
+# name = "Archive"
+# url = "/archive/"
+# weight = 10
 # [[menu.main]]
 # identifier = "guide"
 # name = "Guide"
 # url = "/series/themes-guide/"
 # weight = 20
-[[menu.main]]
-identifier = "about"
-name = "About"
-url = "/about/"
-weight = 50
-[[menu.main]]
-identifier = "friends"
-name = "Friends"
-url = ""
-weight = 100
+# [[menu.main]]
+# identifier = "about"
+# name = "About"
+# url = "/about/"
+# weight = 50
+# [[menu.main]]
+# identifier = "friends"
+# name = "Friends"
+# url = ""
+# weight = 100
 
-
-[params]
-author = "Iris"
-description = "有一些问题不会有答案 有一些事情总会有遗憾 也许未来会使我更完整 去拥抱吧 去勇敢吧"
-keywords = "blog,developer,frontend,backend,engineer,shanghai"
-img_home = "img/home-bg.jpg"
-img_404 = "img/404-bg.jpg"
 
 useFaviconGenerator = true
 
 custom_js = []
 custom_css = [] # ["css/custom.css"]  Add your file to assets folder  [assets/css/custom.css]
-
-[params.sidebar]
-enable = true
-gravatarEmail = ""
-# Overwritten by your gravatar image if `gravatarEmail` is filled
-avatar = "img/home-bg.jpg"
-bio = "Iris"
 
 [params.social]
 # twitter = "johndoe"

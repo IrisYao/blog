@@ -1,0 +1,23 @@
+
+<section class="visible-md visible-lg">
+    {{ $brand := .Site.Params.brand }}
+    <!-- {{ $sidebar := .Site.Params.sidebar }} -->
+    <div class="brand">
+      <a href={{"/" | relURL }}><img class="rounded" src="{{ $brand.avatar | relURL }}" /></a>
+      <h3><a href={{"/" | relURL }}>Iris Yao</a></h3>
+      <p class="bio">有一些问题不会有答案</p>
+      <p class="bio">有一些事情总会有遗憾</p>
+      <p class="bio">也许未来会让我更完整</p>
+    </div>
+
+    <hr>
+
+    <nav class="navbar">
+      {{ range .Site.Menus.main }}
+      <div class="container-fluid">
+        <a class="navbar-brand mb-0 fs-6 fw-medium" href="{{ .URL | safeURL }}" title="{{ .Name }}">{{ .Name }}</a>
+      </div>
+      {{ end }}
+    </nav>
+
+  </section>

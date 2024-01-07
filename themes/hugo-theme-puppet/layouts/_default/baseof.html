@@ -10,7 +10,6 @@
   {{- if not .IsHome }}
     {{ $title = printf "%s | %s" .Title .Site.Title }}
   {{ end -}}
-
   <title>{{ $title }}</title>
 
   {{- with .Site.Params.author }}
@@ -19,8 +18,8 @@
   <meta name="description" content="{{ .Description | default (.Summary | default .Site.Params.description ) }}">
   <meta name="keywords" content="{{ (delimit .Keywords " ,") | default .Site.Params.keywords }}">
 
-  {{ template "_internal/twitter_cards.html" . }}
-  {{ template "_internal/opengraph.html" . }}
+  <!-- {{ template "_internal/twitter_cards.html" . }} -->
+  <!-- {{ template "_internal/opengraph.html" . }} -->
   <link rel="stylesheet" href="{{ "css/bootstrap.min.css" | relURL }}"  crossorigin="anonymous">
   <!-- font-awesome -->
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" rel="stylesheet" type="text/css">
@@ -87,52 +86,25 @@
   {{ .Scratch.Set "toc" true }}
   {{ end -}}
 
-  <!-- Nav -->
-  {{ partial "nav.html" . }}
-  {{ partial "search.html" . }}
-
-  <!-- Page Header -->
-  {{ partial "intro-header.html" . }}
-
   {{ block "main" . }}
 
   <!-- Main Content -->
-  <div class="container">
+  <div class="container flex">
+
     <div class="row">
-      {{ if eq .Site.Params.sidebar.enable false }}
-
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1
-      postlist-container">
-        {{ block "container" . }}{{ end }}
-      </div>
-      <!-- Sidebar Container -->
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1
-      sidebar-container">
-        <!-- Featured Tags -->
-        {{ partial "featured-tags.html" . }}
-        <!-- Friends Blog -->
-        {{ partial "friends.html" . }}
-      </div>
-
-      {{ else }}
-      <!-- USE SIDEBAR -->
-      <!-- PostList Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12
-      col-xs-12 postlist-container">
-        {{ block "container" . }}{{ end }}
-      </div>
-      <!-- Sidebar Container -->
-      <div class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-12
+      <div class="col-lg-2 col-lg-offset-0 col-md-2 col-md-offset-0 col-sm-12
       col-xs-12 sidebar-container">
-
-        <!-- Featured Tags -->
-        {{ partial "featured-tags.html" . }}
-        {{ partial "short-about.html" . }}
-        <!-- Friends Blog -->
-        {{ partial "friends.html" . }}
-
+        {{ partial "sidebar.html" . }}
       </div>
-      {{ end }}
+      <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12
+      col-xs-12 postlist-container ">
+        {{ partial "search.html" . }}
+        {{ block "container" . }}{{ end }}
+      </div>
+      <div class="col-lg-2 col-lg-offset-0 col-md-2 col-md-offset-0 col-sm-12
+      col-xs-12 sidebar-container">
+        {{ partial "toc.html" . }}
+      </div>
 
     </div>
   </div>

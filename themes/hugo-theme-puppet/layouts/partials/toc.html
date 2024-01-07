@@ -1,0 +1,29 @@
+<section>
+  {{ $bottom := .Scratch.Get "bottom" }}
+  {{ if $bottom }}
+  <hr class="hidden-sm hidden-xs">
+  {{ end }}
+
+  <div class="search-icon">
+    <a href="javascript:void(0)">
+      <i class="fa fa-search"></i>
+    </a>
+  </div>
+
+  <nav class="toc">
+    {{ range $term, $_ := .Site.Taxonomies }}
+      {{ with $.Site.GetPage (printf "/%s" $term | urlize) }}
+        <strong>{{ .Title | title }}</strong></br>
+        {{ range .Pages }}
+          <!-- experimenting with a bunch of different styles of tag-cloud -->
+          <!-- <a class="tag-cloud" href="{{ .RelPermalink }}" target="_blank">{{ .Title }}「{{ len .Pages }}」</a> -->
+          <!-- <a class="tag-cloud" href="{{ .RelPermalink }}" target="_blank">{{ .Title }}【{{ len .Pages }}】</a> -->
+          <!-- <a class="tag-cloud" href="{{ .RelPermalink }}" target="_blank">{{ .Title }} ({{ len .Pages }})</a> -->
+          <a class="tag-cloud" href="{{ .RelPermalink }}" target="_blank">{{ .Title }} [{{ len .Pages }}]</a>
+        {{ end }}
+      </br>
+      </br>
+      {{ end }}
+    {{ end }}
+  </nav>
+</section>

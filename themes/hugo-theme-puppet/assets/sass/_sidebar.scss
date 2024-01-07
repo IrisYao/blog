@@ -6,7 +6,7 @@
 @media (min-width: 1200px) {
   .post-container,
   .sidebar-container {
-    padding-right: 5%;
+    padding: 2rem 1rem;
   }
 }
 @media (min-width: 768px) {
@@ -17,46 +17,44 @@
 
 // Container of Sidebar, also Friends
 .sidebar-container {
-  color: $gray-light;
+  color: $gray-dark;
   font-size: 14px;
-  h5 {
-    color: $brand-gray;
-    padding-bottom: 1em;
-    a {
-      color: $brand-gray !important;
-      text-decoration: none;
-    }
+  h3 {
+    margin-top: 1rem;
   }
   a {
-    color: $gray-light !important;
+    color: $gray-dark !important;
+    text-decoration: none;
     &:hover,
     &:active {
       color: $brand-primary !important;
     }
   }
-  .tags {
-    a {
-      border-color: $gray-light;
-      &:hover,
-      &:active {
-        border-color: $brand-primary;
-      }
-    }
+  .container-fluid {
+    padding-left: 0 !important;
   }
-  .short-about {
+  .brand {
     img {
       width: 80%;
-      display: block;
-      border-radius: 5px;
-      margin-bottom: 20px;
+      cursor: pointer;
     }
     p {
-      margin-top: 0px;
-      margin-bottom: 20px;
+      // margin-top: 0px;
+      margin: 0;
     }
-    .list-inline > li {
-      padding-left: 0px;
-      margin-bottom:5px;
+  }
+  .navbar {
+    margin-top: -1rem;
+  }
+  .toc {
+    strong {
+      line-height: 2rem;
+    }
+  }
+  .search-icon {
+    margin-bottom: 1rem !important;
+    a {
+      font-size: 1.5rem;
     }
   }
 }
