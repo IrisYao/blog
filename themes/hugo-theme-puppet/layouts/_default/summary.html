@@ -1,18 +1,49 @@
 <div class="post-preview">
   <a href="{{ .RelPermalink }}">
       <h2 class="post-title">{{ .Title }}</h2>
-      {{ with .Params.subtitle }}
-      <h3 class="post-subtitle">{{ . }}</h3>
-      {{ end }}
-      <div class="post-content-preview">
-        {{ if isset .Params "description" }} {{ index .Params "description" }}
-        {{ else }}
-        {{ .Summary | plainify | truncate 180 }}
-        {{ end }} 
+      <p class="date">{{ .Date.Format "Jan 1, 2006" }}</p>
+
+      <!-- category and tags -->
+      <div class="toc">
+        {{ range $taxonomy, $_ := .Site.Taxonomies }}
+        {{ with $terms := $.GetTerms $taxonomy }}
+          <div>
+            {{ range $n, $term := $terms }}{{ if $n }} <span style="color:#4c7f40">| </span> {{ end }}
+              <a class="toc-item" href="{{ $term.RelPermalink }}">{{ $term.Title }}</a>
+            {{- end }}
+          </div>
+          {{ end }}
+        {{ end }}
       </div>
+
+      <!-- image -->
+      {{ if .Params.image }}
+      <p>
+        {{ with .Resources.GetMatch .Params.image }}
+          <img src={{ .RelPermalink }} />
+        {{ else }}
+          <img src={{ .Params.image | relURL }} />
+        {{ end }}
+      </p>
+      {{ end }}
+      <!-- image description -->
+      {{ if .Params.imageDes }}
+        <p style="font-size:small">
+          <i>{{ $.Params.imageDes }}</i>
+        </p>
+      {{ end }}
+
+      <a class="post-content-preview" href="{{ .RelPermalink }}">
+        {{ .Summary | plainify | truncate 180 }}
+      </a>
+
+      <blockquote class="post-hint">
+        <a class="blockquote" href="{{ .RelPermalink }}">
+          总计 {{ div .WordCount 1000.0 | lang.FormatNumber 2}}k 字, 阅读约需要 {{ div .WordCount 400}} 分钟
+        </a>
+      </blockquote>
+
   </a>
-  <p class="post-meta">
-      Posted by {{ with $.Params.author }} {{ $.Params.author }} {{ else }} {{ .Site.Params.author }} {{ end }} on {{ .Date.Format "Mon, Jan 2, 2006" }}
-  </p>
+
 </div>
 <hr>
