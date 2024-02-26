@@ -36,8 +36,8 @@ style = "dracula"
 unsafe = true
 
 [params]
-author = "IrisYao"
-description = "有一些问题不会有答案 有一些事情总会有遗憾 也许未来会使我更完整"
+author = "年年"
+description = "看太阳在眼前千百次升起 只为找到一个前行的原因"
 keywords = "blog,developer,frontend,backend,engineer,shanghai"
 img_home = "img/home-bg.jpg"
 img_404 = "img/404-bg.jpg"
@@ -58,21 +58,21 @@ identifier = "blog"
 name = "博客"
 url = "/"
 weight = -100
-# [[menu.main]]
-# identifier = "archive"
-# name = "Archive"
-# url = "/archive/"
-# weight = 10
+[[menu.main]]
+identifier = "Book"
+name = "书影音"
+url = "https://juniper-amethyst-b55.notion.site/4129beb4beee43e9939da0d1b80cdd90"
+weight = 10
 # [[menu.main]]
 # identifier = "guide"
 # name = "Guide"
 # url = "/series/themes-guide/"
 # weight = 20
-# [[menu.main]]
-# identifier = "about"
-# name = "About"
-# url = "/about/"
-# weight = 50
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 50
 # [[menu.main]]
 # identifier = "friends"
 # name = "Friends"
