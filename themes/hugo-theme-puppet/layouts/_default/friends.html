@@ -1,0 +1,52 @@
+{{ define "main" }}
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-2 col-lg-offset-0 col-md-2 col-md-offset-0 col-sm-12
+      col-xs-12 sidebar-container">
+        {{ partial "sidebar.html" . }}
+      </div>
+
+      {{ $friends := .Site.Params.friends }}
+      {{ with $friends }}
+      <ul class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+        {{ range $friends }}
+        <li><a href="{{ .url }}" target="_blank">{{ .name }}</a></li>
+        {{ end }}
+      </ul>
+      {{ end }}
+
+      <!-- Side Catalog Container -->
+      {{ $toc := .Scratch.Get "toc" }}
+      {{ if $toc }}
+      <div class="
+              col-lg-2 col-lg-offset-0
+              visible-lg-block
+              sidebar-container
+              catalog-container">
+        <div class="side-catalog">
+          <hr class="hidden-sm hidden-xs">
+          <h5>
+            <a class="catalog-toggle" href="#">CATALOG</a>
+          </h5>
+          <ul class="catalog-body"></ul>
+        </div>
+      </div>
+      {{ end }}
+      <!-- Sidebar Container -->
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        <!-- Featured Tags -->
+        {{ .Scratch.Set "bottom" true }}
+
+      </div>
+    </div>
+  </div>
+</article>
+
+{{ end }}

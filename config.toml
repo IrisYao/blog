@@ -73,11 +73,11 @@ identifier = "about"
 name = "About"
 url = "/about/"
 weight = 50
-# [[menu.main]]
-# identifier = "friends"
-# name = "Friends"
-# url = ""
-# weight = 100
+[[menu.main]]
+identifier = "friends"
+name = "友链"
+url = "/friends/"
+weight = 100
 
 
 useFaviconGenerator = true
@@ -101,9 +101,9 @@ custom_css = [] # ["css/custom.css"]  Add your file to assets folder  [assets/cs
 # id = "mock"
 # url = ""
 
-# [[params.friends]]
-# name = "Windmgc"
-# url = "https://gohugo.io"
+[[params.friends]]
+name = "windmgc"
+url = "https://windmgc.me/"
 
 # [[params.friends]]
 # name = "Windmgc"
